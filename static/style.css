@@ -1,0 +1,95 @@
+body {
+    background: #0b1426; /* fallback for older browsers */
+    background: radial-gradient(circle at 10% 10%, #132b43 0%, #003f5c 100%);
+    color: #fff;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.word-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    min-width: 500px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+  
+@media only screen and (max-width: 600px) {
+    form {
+      min-width: 95%;
+    }
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 80%;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    height: 38px;
+}
+  
+input[type="text"]:focus {
+    outline: none;
+}
+  
+button[type="submit"] {
+    padding: 10px;
+    border: none;
+    background-color: #0077b6;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    height: 38px;
+    transition: background-color 0.1s ease-in-out;   
+}
+  
+button[type="submit"]:hover {
+    transition-delay: 0.1s;
+    background-color: #023e8a;
+}
+  
+p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 20px 0;
+    max-width: 100%;
+}
+  
+ul.flashes {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 500px;
+}
+  
+ul.flashes li {
+    background-color: #ff6b6b;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    margin-bottom: 10px;
+}
