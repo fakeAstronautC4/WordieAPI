@@ -3,13 +3,18 @@ from flask import Flask, render_template, flash
 from flask_wtf.csrf import CSRFProtect
 from forms import WordForm
 import requests
+import secrets
 import os
 
 
 #Setting up the app
 app = Flask(__name__)
-#Hiding the key
-app.secret_key = os.environ.get('SECRET_KEY')
+
+#Flask's session manager key
+session_key = secrets.token_hex(16)
+app.config['SECRET_KEY'] = session_key
+
+#API key
 secret_key = os.environ.get('SECRET_KEY')
 csrf = CSRFProtect(app)
 
