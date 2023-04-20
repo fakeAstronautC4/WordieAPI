@@ -4,6 +4,7 @@ from flask_wtf.csrf import CSRFProtect
 from forms import WordForm
 import requests
 import secrets
+from waitress import serve
 import os
 
 
@@ -14,7 +15,7 @@ app = Flask(__name__)
 session_key = secrets.token_hex(16)
 app.config['SECRET_KEY'] = session_key
 
-#API key
+#API key n
 secret_key = os.environ.get('SECRET_KEY')
 csrf = CSRFProtect(app)
 
@@ -57,6 +58,6 @@ def homepage():
 
 #######################################  TRIGGER  ########################################
 
-if __name__== '__main__':
-    app.env = 'development'
-    app.run()
+if __name__ == '__main__':
+    
+    serve(app, host='0.0.0.0', port=8080, threads = 2)
